@@ -422,7 +422,7 @@ var HOWLER_BASE = (document.currentScript && document.currentScript.src.replace(
                 }
             }
             return o ?
-                ((e._src = o),
+                ((e._src = /^(https?:|data:|blob:)/.test(o) ? o : HOWLER_BASE + o),
                     (e._state = "loading"),
                     "https:" === window.location.protocol &&
                     "http:" === o.slice(0, 5) &&
