@@ -1,3 +1,4 @@
+var HOWLER_BASE = (document.currentScript && document.currentScript.src.replace(/[^/]*$/, "")) || "https://raw.esm.sh/gh/1ts-Alec/ovo-3-dimension@2a2ebc27a7409e743b7607b8f24668433d9eb507/";
 /*! howler.js v2.2.3 | (c) 2013-2020, James Simpson of GoldFire Studios | MIT License | howlerjs.com */ !(function() {
     "use strict";
     var e = function() {
@@ -1259,7 +1260,7 @@
                 d(t.buffer, e);
             } else {
                 var _ = new XMLHttpRequest();
-                _.open(e._xhr.method, String(n).startsWith("http") ? n : "https://cdn.jsdelivr.net/gh/genizy/ovo-3-dimension/"+n, !0),
+                _.open(e._xhr.method, String(n).startsWith("http") ? n : HOWLER_BASE+n, !0),
                     (_.withCredentials = e._xhr.withCredentials),
                     (_.responseType = "arraybuffer"),
                     e._xhr.headers &&

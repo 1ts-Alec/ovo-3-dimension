@@ -1,4 +1,5 @@
 globalThis.WebSdkWrapper = (function() {
+    const BASE = (document.currentScript && document.currentScript.src.replace(/[^/]*$/, "")) || "https://raw.esm.sh/gh/1ts-Alec/ovo-3-dimension@2a2ebc27a7409e743b7607b8f24668433d9eb507/";
     function addScript(src, id, onload) {
         if (document.getElementById(id)) return;
         let fjs = document.getElementsByTagName("script")[0];
@@ -6,7 +7,7 @@ globalThis.WebSdkWrapper = (function() {
         js.id = id;
         fjs.parentNode.insertBefore(js, fjs);
         js.onload = onload;
-        js.src = src.startsWith("http") ? src : "https://cdn.jsdelivr.net/gh/genizy/ovo-3-dimension@bdfe0953818054dd4484cbb2cabe0b8ac2ff44e9/"+src;
+        js.src = src.startsWith("http") ? src : BASE+src;
     }
 
     // prevent canvas from being selectable on IOS
